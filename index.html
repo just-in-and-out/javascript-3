@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="style.css">
+  <head>
+    <title>shuffle</title>
+  </head>
+  <body>
+    <div>
+      <img src="img/image1.jpg" alt="">
+      <img src="img/image2.jpg" alt="">
+      <img src="img/image3.jpg" alt="">
+      <img src="img/image4.jpg" alt="">
+      <img src="img/image5.jpg" alt="">
+      <img src="img/image6.jpg" alt="">
+      <img src="img/image7.jpg" alt="">
+      <img src="img/image8.jpg" alt="">
+      <img src="img/image9.jpg" alt="">
+    </div>
+  </body>
+  <script>
+    var setimage = document.getElementsByTagName("img");
+    var random = 0;
+    var randomnumber = [];
+    while (randomnumber.length < 9){
+      var random = Math.floor((Math.random()*9)+1);
+      if (randomnumber.lastIndexOf(random) == -1){
+          randomnumber.push(random);
+      }
+    }
+    random = 0;
+    for(var image in setimage){
+      setimage[image].src = "img/image" + randomnumber[random] + ".jpg";
+      random++;
+      console.log(random);
+    }
+  </script>
+</html>
